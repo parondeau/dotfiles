@@ -1,0 +1,23 @@
+[alias]
+  st = status
+  co = checkout
+  plog = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(magenta)%an' --abbrev-commit --date=relative --graph
+[user]
+  name = Paul Rondeau
+  email = paulrondeau07@gmail.com
+[push]
+  default = nothing
+[color]
+  ui = always
+[color "diff"]
+  meta = yellow bold
+  commit = green bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"

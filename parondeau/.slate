@@ -1,0 +1,107 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Abstract positions
+alias full              move    screenOriginX;screenOriginY                                 screenSizeX;screenSizeY
+alias lefthalf          move    screenOriginX;screenOriginY                                 screenSizeX/2;screenSizeY
+alias righthalf         move    screenOriginX+screenSizeX/2;screenOriginY                   screenSizeX/2;screenSizeY
+alias rightmosthalf     move    screenOriginX+screenSizeX*0.52;screenOriginY                screenSizeX*0.48;screenSizeY
+alias leftmosthalf      move    screenOriginX;screenOriginY                                 screenSizeX*0.52;screenSizeY
+alias bottomhalf        move    screenOriginX;screenOriginY+screenSizeY*2/5                 screenSizeX;screenSizeY*3/5
+alias tophalf           move    screenOriginX;screenOriginY                                 screenSizeX;screenSizeY*2/5
+alias topleft           corner  top-left                                                    resize:screenSizeX/2;screenSizeY/2
+alias topleftmost       corner  top-left                                                    resize:screenSizeX/2;2*screenSizeY/5
+alias topright          corner  top-right                                                   resize:screenSizeX/2;screenSizeY/2
+alias toprightmost      corner  top-right                                                   resize:screenSizeX/2;2*screenSizeY/5
+alias bottomleft        corner  bottom-left                                                 resize:screenSizeX/2;screenSizeY/2
+alias bottomleftmost    corner  bottom-left                                                 resize:screenSizeX/2;3*screenSizeY/5
+alias bottomright       corner  bottom-right                                                resize:screenSizeX/2;screenSizeY/2
+alias bottomrightmost   corner  bottom-right                                                resize:screenSizeX/2;3*screenSizeY/5
+alias middle            move    screenOriginX+screenSizeX/6;screenOriginY+screenSizeY/6     2*screenSizeX/3;2*screenSizeY/3
+
+## Application aliases
+alias browser   'Google Chrome'
+alias editor    'Atom'
+alias terminal  'iTerm2'
+alias spotify   'Spotify'
+alias cider     'Cider'
+alias yakyak    'yakyak'
+
+alias monitor2   0
+alias monitor1   1
+alias laptop     2
+
+alias mon-full      move screenOriginX;screenOriginY                    screenSizeX;screenSizeY ${monitor1}
+alias mon-right     move screenOriginX+screenSizeX/2;screenOriginY      screenSizeX/2;screenSizeY ${monitor1}
+alias mon-left      move screenOriginX;screenOriginY                    screenSizeX/2;screenSizeY ${monitor1}
+alias mon2-full     move screenOriginX;screenOriginY                    screenSizeX;screenSizeY ${monitor2}
+alias mon2-left     move screenOriginX;screenOriginY                    screenSizeX*0.52;screenSizeY ${monitor2}
+alias mon2-right    move screenOriginX+screenSizeX*0.52;screenOriginY   screenSizeX*0.48;screenSizeY ${monitor2}
+alias lap-full      move screenOriginX;screenOriginY                    screenSizeX;screenSizeY ${laptop}
+alias lap-right     move screenOriginX;screenOriginY                    screenSizeX/2;screenSizeY ${laptop}
+alias lap-left      move screenOriginX/2;screenOriginY                  screenSizeX/2;screenSizeY ${laptop}
+
+alias hyper ctrl;cmd;alt
+
+
+bind o:${hyper}  throw next resize
+bind i:${hyper}  ${full}
+bind ;:${hyper}  ${lefthalf}
+bind ]:${hyper}  ${rightmosthalf}
+bind [:${hyper}  ${leftmosthalf}
+Paul
+bind ':${hyper}  ${righthalf}
+bind y:${hyper}  ${topleft}
+bind u:${hyper}  ${topright}
+bind b:${hyper}  ${bottomleft}
+bind n:${hyper}  ${bottomright}
+bind v:${hyper}  ${bottomhalf}
+bind t:${hyper}  ${tophalf}
+bind h:${hyper}  ${middle}
+
+## Focus Bindings
+#bind k:${hyper}  focus up
+#bind j:${hyper}  focus down
+#bind h:${hyper}  focus left
+#bind l:${hyper}  focus right
+
+## App bindings
+# These are laid out on the left hand
+bind space:${hyper} focus ${terminal}
+bind l:${hyper}     focus ${browser}
+bind k:${hyper}     focus ${editor}
+bind j:${hyper}     focus ${spotify}
+bind ,:${hyper}     focus ${cider}
+
+layout 3mon 'Spotify'       ${mon2-left} #push up bar-resize:screenSizeY/2
+layout 3mon 'Google Chrome' ${mon-right} #| push down bar-resize:screenSizeY/2
+layout 3mon 'iTerm2'        ${mon-left}
+layout 3mon 'Keep'          ${mon2-right}
+layout 3mon 'HipChat'       ${mon2-right}
+layout 3mon 'Evernote'      ${mon2-right}
+layout 3mon 'Atom'          ${mon-full}
+layout 3mon 'IntelliJ IDEA' ${mon-full}
+layout 3mon 'Wunderlist'    ${mon2-right}
+layout 3mon 'Cider'         ${mon-right}
+layout 3mon 'yakyak'        ${lap-full}
+
+layout 1mon 'Spotify' ${full}
+layout 1mon 'Google Chrome' ${full}
+layout 1mon 'iTerm2' ${full}
+layout 1mon 'Keep' ${full}
+layout 1mon 'HipChat' ${full}
+layout 1mon 'Atom' ${full}
+layout 1mon 'Evernote' ${full}
+layout 1mon 'IntelliJ IDEA' ${full}
+layout 1mon 'Wunderlist' ${full}
+layout 1mon 'Cider' ${full}
+layout 1mon 'yakyak' ${full}
+bind backslash:${hyper} relaunch
+
+default 3mon count:3
+default 1mon count:1
+
+bind m:${hyper} layout 3mon
+bind n:${hyper} layout 1mon
