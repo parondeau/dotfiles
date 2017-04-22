@@ -26,6 +26,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " highlights whole line
 set cursorline
 
+" css/scss autocomplete
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" Remap code completion to Ctrl+Space {{{2
+inoremap <Nul> <C-x><C-o>
+
 map U :redo<CR>
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! w !sudo tee > dev/null %
