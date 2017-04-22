@@ -1,3 +1,4 @@
+exclude: '*.css'
 severity: error
 
 linters:

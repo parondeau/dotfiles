@@ -69,6 +69,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers= ['scss_lint']
 
 " NERD TREE "
 " opens nerd tree if directory is opened
@@ -81,7 +82,9 @@ map ,f :NERDTreeToggle<CR>
 " show hidden files
 let NERDTreeShowHidden=1
 " ignore
-let NERDTreeIgnore=['.git', '\.swp$', '.swo$']
+let NERDTreeIgnore=['.git$', '\.swp$', '.swo$', '.sass-cache']
+autocmd FileType nerdtree noremap <buffer> v :call nerdtree#ui_glue#invokeKeyMap("s")<CR>
+autocmd FileType nerdtree noremap <buffer> h :call nerdtree#ui_glue#invokeKeyMap("i")<CR>
 
 " NERD COMMENTER "
 " Add spaces after comment delimiters by default
