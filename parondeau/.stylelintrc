@@ -1,0 +1,37 @@
+{
+  "plugins": [
+    "/usr/local/lib/node_modules/stylelint-scss"
+  ],
+  "rules": {
+    "block-closing-brace-empty-line-before": "never",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-no-invalid-hex": true,
+    "declaration-bang-space-after": "never",
+    "declaration-bang-space-before": "always",
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-colon-newline-after": "always-multi-line",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-no-important": true,
+    "declaration-block-trailing-semicolon": "always",
+    "length-zero-no-unit": true,
+    "max-empty-lines": 2,
+    "max-nesting-depth": 4,
+    "no-eol-whitespace": true,
+    "no-extra-semicolons": true,
+    "no-missing-end-of-source-newline": true,
+    "property-case": "lower",
+    "property-no-vendor-prefix": true,
+    "rule-empty-line-before": ["always-multi-line", { "except": ["first-nested", "after-single-line-comment"]}],
+    "shorthand-property-no-redundant-values": true,
+    "string-no-newline": true,
+    "string-quotes": "double",
+    "value-list-comma-newline-after": "always-multi-line",
+    "value-list-comma-space-after": "always-single-line",
+    "value-list-comma-space-before": "never",
+    "value-no-vendor-prefix": true
+  }
+}
+

@@ -33,9 +33,24 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " Remap code completion to Ctrl+Space {{{2
 inoremap <Nul> <C-x><C-o>
 
+" remap vim switch panes
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" remap vim splitpane resize
+nnoremap <Leader>= :vertical resize +15<CR>
+nnoremap <Leader>+ :resize +15<CR>
+nnoremap <Leader>- :vertical resize -15<CR>
+nnoremap <Leader>_ :resize -15<CR>
+
 map U :redo<CR>
 " Allow saving of files as sudo when I forgot to start vim using sudo
 cmap w!! w !sudo tee > dev/null %
+
+cabbr <expr> %% expand('%:p:h')   " entering %% expands current working dir
+set so=5                          " must be at least 5 lines from top/bottom
 
 """"""""""""""""" PLUGINS """""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -58,6 +73,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
+Plugin 'ap/vim-buftabline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,6 +86,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_checkers= ['scss_lint']
+let g:syntastic_html_tidy_ignore_errors = [
+  \'missing </label> before <div>',
+  \'inserting implicit <label>',
+  \'discarding unexpected </label>',
+  \'trimming empty <label>',
+  \]
 
 " NERD TREE "
 " opens nerd tree if directory is opened
@@ -97,6 +119,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " CTRL-P "
 map ,<Space> :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_prompt_mappings = { 'AcceptSelection("h")': ['<c-h>'] }
 
 " VIM-GITGUTTER "
 set updatetime=250
@@ -115,7 +138,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=235
 let g:ycm_complete_in_comments = 1
 map ,g :YcmCompleter GoTo<CR>
 map ,b :YcmCompleter GoToReferences<CR>
+
+" BUFTAB "
+set hidden
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-m> :bprev<CR>
+
 """"""""""""""""" PLUGINS DONE """""""""""""""""
 colo railscasts 
-" hide insert below statusline
-set noshowmode
+set noshowmode                  " hide insert below statusline
+set showcmd                     " show the last command"
+set showmatch                   " show matching bracket
+set wildmenu                    " enhanced completion"
