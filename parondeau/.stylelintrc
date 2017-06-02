@@ -25,13 +25,19 @@
     "property-case": "lower",
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": ["always-multi-line", { "except": ["first-nested", "after-single-line-comment"]}],
+    "selector-class-pattern": "^[a-z]+(-[a-z]+)*$",
+    "selector-id-pattern": "^[a-z]+(-[a-z]+)*$",
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
     "string-quotes": "double",
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
-    "value-no-vendor-prefix": true
+    "value-no-vendor-prefix": true,
+
+    "scss/dollar-variable-pattern": "^[a-z]+(-[a-z]+)*$",
+    "scss/at-mixin-pattern": "^[a-z]+(-[a-z]+)*$",
+    "scss/selector-no-redundant-nesting-selector": true
   }
 }
 
