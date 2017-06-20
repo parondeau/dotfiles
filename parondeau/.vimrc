@@ -26,6 +26,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " highlights whole line
 set cursorline
 
+" autotrim whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
 " css/scss autocomplete
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS

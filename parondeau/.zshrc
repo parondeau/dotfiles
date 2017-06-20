@@ -14,3 +14,13 @@ export EDITOR='vim'
 . /Users/parondeau/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 export TERM=xterm-256color
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/parondeau/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/parondeau/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/parondeau/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/parondeau/google-cloud-sdk/completion.zsh.inc'; fi
+
+# NVM CONFIG #
+export NVM_DIR=$HOME/.nvm
+. "/usr/local/opt/nvm/nvm.sh"

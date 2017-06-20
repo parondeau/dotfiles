@@ -1,0 +1,13 @@
+1password
+bittorrent
+google-chrome-beta
+middleclick
+slate
+statusfy
+vlc
+alfred2
+docker
+iterm2-beta
+private-internet-access
+spotify
+visual-studio-code
