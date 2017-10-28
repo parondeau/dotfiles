@@ -23,11 +23,11 @@ alias middle            move    screenOriginX+screenSizeX/6;screenOriginY+screen
 
 ## Application aliases
 alias browser   'Google Chrome'
-alias editor    'Atom'
-alias terminal  'iTerm2'
-alias spotify   'Spotify'
-alias cider     'Cider'
-alias yakyak    'yakyak'
+alias term      'iTerm2'
+alias music     'Spotify'
+alias editor    'Code'
+alias dash      'Dash'
+alias macdown   'MacDown'
 
 alias monitor2   0
 alias monitor1   1
@@ -49,55 +49,27 @@ alias hyper ctrl;cmd;alt
 bind o:${hyper}  throw next resize
 bind i:${hyper}  ${full}
 bind ;:${hyper}  ${lefthalf}
-bind ]:${hyper}  ${rightmosthalf}
-bind [:${hyper}  ${leftmosthalf}
-Paul
 bind ':${hyper}  ${righthalf}
-bind y:${hyper}  ${topleft}
-bind u:${hyper}  ${topright}
-bind b:${hyper}  ${bottomleft}
-bind n:${hyper}  ${bottomright}
 bind v:${hyper}  ${bottomhalf}
 bind t:${hyper}  ${tophalf}
 bind h:${hyper}  ${middle}
 
-## Focus Bindings
-#bind k:${hyper}  focus up
-#bind j:${hyper}  focus down
-#bind h:${hyper}  focus left
-#bind l:${hyper}  focus right
-
 ## App bindings
-# These are laid out on the left hand
-bind space:${hyper} focus ${terminal}
+bind space:${hyper} focus ${term}
 bind l:${hyper}     focus ${browser}
-bind k:${hyper}     focus ${editor}
-bind j:${hyper}     focus ${spotify}
-bind ,:${hyper}     focus ${cider}
+bind ,:${hyper}     focus ${editor}
+bind j:${hyper}     focus ${music}
+bind k:${hyper}     focus ${dash}
+bind b:${hyper}     focus ${macdown}
 
 layout 3mon 'Spotify'       ${mon2-left} #push up bar-resize:screenSizeY/2
 layout 3mon 'Google Chrome' ${mon-right} #| push down bar-resize:screenSizeY/2
 layout 3mon 'iTerm2'        ${mon-left}
-layout 3mon 'Keep'          ${mon2-right}
-layout 3mon 'HipChat'       ${mon2-right}
-layout 3mon 'Evernote'      ${mon2-right}
-layout 3mon 'Atom'          ${mon-full}
-layout 3mon 'IntelliJ IDEA' ${mon-full}
-layout 3mon 'Wunderlist'    ${mon2-right}
-layout 3mon 'Cider'         ${mon-right}
-layout 3mon 'yakyak'        ${lap-full}
 
-layout 1mon 'Spotify' ${full}
-layout 1mon 'Google Chrome' ${full}
-layout 1mon 'iTerm2' ${full}
-layout 1mon 'Keep' ${full}
-layout 1mon 'HipChat' ${full}
-layout 1mon 'Atom' ${full}
-layout 1mon 'Evernote' ${full}
-layout 1mon 'IntelliJ IDEA' ${full}
-layout 1mon 'Wunderlist' ${full}
-layout 1mon 'Cider' ${full}
-layout 1mon 'yakyak' ${full}
+layout 1mon ${music}        ${full}
+layout 1mon ${browser}      ${full}
+layout 1mon ${term}         ${full}
+layout 1mon ${editor}       ${full}
 bind backslash:${hyper} relaunch
 
 default 3mon count:3

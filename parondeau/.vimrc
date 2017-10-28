@@ -15,7 +15,7 @@ set shiftwidth=2
 set softtabstop=2
 set ts=2 sw=2 et
 " vim syntax highlight
-syntax on 
+syntax on
 " line numbers
 set nu
 set numberwidth=3
@@ -25,6 +25,8 @@ set splitright
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 " highlights whole line
 set cursorline
+" fixes backspace issues
+set backspace=indent,eol,start
 
 " autotrim whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
@@ -77,6 +79,7 @@ Plugin 'jpo/vim-railscasts-theme'
 Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
 Plugin 'ap/vim-buftabline'
+Plugin 'shime/vim-livedown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,6 +98,7 @@ let g:syntastic_html_tidy_ignore_errors = [
   \'discarding unexpected </label>',
   \'trimming empty <label>',
   \]
+let g:syntastic_python_checkers = ['pylint']
 
 " NERD TREE "
 " opens nerd tree if directory is opened
@@ -147,9 +151,11 @@ set hidden
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-m> :bprev<CR>
 
+" Livedown (Markdown) "
+nmap ,M :LivedownToggle<CR>
+
 """"""""""""""""" PLUGINS DONE """""""""""""""""
-colo railscasts 
+colo railscasts
 set noshowmode                  " hide insert below statusline
-set showcmd                     " show the last command"
 set showmatch                   " show matching bracket
 set wildmenu                    " enhanced completion"
