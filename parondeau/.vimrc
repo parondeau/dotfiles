@@ -1,8 +1,3 @@
-"""""""""""""""" POWELINE CONF """"""""""""""""
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-" enable powerline for vim even if only 1 file is open
 set laststatus=2
 
 """"""""""""""""" TMUX CONF """""""""""""""""""""
@@ -80,6 +75,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'raimondi/delimitmate'
 Plugin 'ap/vim-buftabline'
 Plugin 'shime/vim-livedown'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

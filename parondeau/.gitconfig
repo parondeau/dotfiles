@@ -3,8 +3,8 @@
   co = checkout
   plog = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(magenta)%an' --abbrev-commit --date=relative --graph
 [user]
-  name = Paul Rondeau
-  email = paulrondeau07@gmail.com
+	name = Paul Rondeau
+	email = paulrondeau07@gmail.com
 [push]
   default = nothing
 [color]
