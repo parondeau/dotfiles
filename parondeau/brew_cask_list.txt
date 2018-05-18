@@ -1,6 +1,8 @@
 1password
 bittorrent
 google-chrome-beta
+firefox-developer-edition
+macdown
 middleclick
 slate
 statusfy
