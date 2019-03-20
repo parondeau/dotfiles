@@ -1,1 +1,7 @@
-alias l='ls -lat'
+alias spot="mdfind"
+alias vpn-on="ovpn --openvpn_protocol=tcp -s mtv"
+alias dockerrmi="$(for i in $(docker images | grep '^<none>' | awk '{print $3}'); do docker rmi -f $i; done;)"
+alias dockerrm="for i in $(docker ps -a  | awk '{print $1}' | grep -v CONTAINER); do docker rm $i; done;"
+alias kc="kubectl"
+alias l="ls -la"
+alias tmux="TERM=screen-256color-bce tmux"
