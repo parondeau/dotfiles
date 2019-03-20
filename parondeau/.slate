@@ -28,6 +28,7 @@ alias music     'Spotify'
 alias editor    'Code'
 alias dash      'Dash'
 alias macdown   'MacDown'
+alias slack     'Slack'
 
 alias monitor2   0
 alias monitor1   1
@@ -61,6 +62,7 @@ bind ,:${hyper}     focus ${editor}
 bind j:${hyper}     focus ${music}
 bind k:${hyper}     focus ${dash}
 bind b:${hyper}     focus ${macdown}
+bind u:${hyper}     focus ${slack}
 
 layout 3mon 'Spotify'       ${mon2-left} #push up bar-resize:screenSizeY/2
 layout 3mon 'Google Chrome' ${mon-right} #| push down bar-resize:screenSizeY/2
