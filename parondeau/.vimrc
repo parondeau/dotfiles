@@ -72,7 +72,6 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'valloric/youcompleteme'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ap/vim-buftabline'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
@@ -82,6 +81,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -144,4 +145,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=235
 let g:ycm_complete_in_comments = 1
 map ,g :YcmCompleter GoTo<CR>
 map ,b :YcmCompleter GoToReferences<CR>
+
+"""""""""" AIRLINE """""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='deus'
 
