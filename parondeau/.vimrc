@@ -70,6 +70,7 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'valloric/youcompleteme'
+Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -149,4 +150,11 @@ map ,b :YcmCompleter GoToReferences<CR>
 """""""""" AIRLINE """""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='deus'
+
+"""""""" vim-bookmarks """""""""
+let g:bookmark_sign = '¿'
+let g:bookmark_center = 1
+let g:bookmark_highlight_lines = 1
+highlight BookmarkLine ctermbg=78 ctermfg=161
+highlight BookmarkSign ctermfg=78
 
