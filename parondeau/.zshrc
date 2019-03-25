@@ -21,3 +21,4 @@ export TERM=xterm-256color
 # gcloud
 source "/Users/prondeau/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/Users/prondeau/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
