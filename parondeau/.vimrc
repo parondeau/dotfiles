@@ -41,6 +41,9 @@ nnoremap <Leader>+ :resize +15<CR>
 nnoremap <Leader>- :vertical resize -15<CR>
 nnoremap <Leader>_ :resize -15<CR>
 
+" ctrl-c copies to system clipboard
+vmap <C-C> :w !pbcopy<CR><CR>
+
 " Remap code completion to Ctrl+Space {{{2
 inoremap <Nul> <C-x><C-o>
 
