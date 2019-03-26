@@ -30,9 +30,9 @@ alias dash      'Dash'
 alias macdown   'MacDown'
 alias slack     'Slack'
 
-alias monitor2   0
+alias monitor2   2
 alias monitor1   1
-alias laptop     2
+alias laptop     0
 
 alias mon-full      move screenOriginX;screenOriginY                    screenSizeX;screenSizeY ${monitor1}
 alias mon-right     move screenOriginX+screenSizeX/2;screenOriginY      screenSizeX/2;screenSizeY ${monitor1}
@@ -45,7 +45,6 @@ alias lap-right     move screenOriginX;screenOriginY                    screenSi
 alias lap-left      move screenOriginX/2;screenOriginY                  screenSizeX/2;screenSizeY ${laptop}
 
 alias hyper ctrl;cmd;alt
-
 
 bind o:${hyper}  throw next resize
 bind i:${hyper}  ${full}
@@ -64,14 +63,17 @@ bind k:${hyper}     focus ${dash}
 bind b:${hyper}     focus ${macdown}
 bind u:${hyper}     focus ${slack}
 
-layout 3mon 'Spotify'       ${mon2-left} #push up bar-resize:screenSizeY/2
-layout 3mon 'Google Chrome' ${mon-right} #| push down bar-resize:screenSizeY/2
-layout 3mon 'iTerm2'        ${mon-left}
+layout 3mon ${browser}      ${mon2-full}
+layout 1mon ${editor}       ${mon-full}
+layout 3mon ${music}        ${lap-full}
+layout 3mon ${slack}        ${lap-full}
+layout 3mon ${term}         ${mon-full}
 
-layout 1mon ${music}        ${full}
 layout 1mon ${browser}      ${full}
-layout 1mon ${term}         ${full}
 layout 1mon ${editor}       ${full}
+layout 1mon ${music}        ${full}
+layout 3mon ${slack}        ${full}
+layout 1mon ${term}         ${full}
 bind backslash:${hyper} relaunch
 
 default 3mon count:3
