@@ -1,9 +1,8 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# custom homebrew path
-export PATH=$HOME/homebrew/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/bin/flutter/bin:$PATH
+export BREW_PATH=$(brew --prefix)
 
 # ZSH Config
-export ZSH="/Users/prondeau/.oh-my-zsh"
+export ZSH="/Users/parondeau/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
@@ -19,6 +18,11 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERM=xterm-256color
 
 # gcloud
-source "/Users/prondeau/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/Users/prondeau/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "${BREW_PATH}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "${BREW_PATH}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 

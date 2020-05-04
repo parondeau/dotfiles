@@ -25,7 +25,7 @@
     "property-case": "lower",
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": ["always-multi-line", { "except": ["first-nested", "after-single-line-comment"]}],
-    "selector-class-pattern": "^[a-z](-[a-z0-9]+)*$",
+    "selector-class-pattern": "^[a-zA-Z](-[a-z0-9]+)*$",
     "selector-id-pattern": "^[a-z]+(-[a-z]+)*$",
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,

@@ -27,8 +27,11 @@ alias term      'iTerm2'
 alias music     'Spotify'
 alias editor    'Code'
 alias dash      'Dash'
-alias macdown   'MacDown'
 alias slack     'Slack'
+alias notes     'Notion'
+alias todo      'Any.do'
+alias logic     'Logic Pro X'
+alias typora    'Typora'
 
 alias monitor2   2
 alias monitor1   1
@@ -50,8 +53,6 @@ bind o:${hyper}  throw next resize
 bind i:${hyper}  ${full}
 bind ;:${hyper}  ${lefthalf}
 bind ':${hyper}  ${righthalf}
-bind v:${hyper}  ${bottomhalf}
-bind t:${hyper}  ${tophalf}
 bind h:${hyper}  ${middle}
 
 ## App bindings
@@ -60,8 +61,11 @@ bind l:${hyper}     focus ${browser}
 bind ,:${hyper}     focus ${editor}
 bind j:${hyper}     focus ${music}
 bind k:${hyper}     focus ${dash}
-bind b:${hyper}     focus ${macdown}
 bind u:${hyper}     focus ${slack}
+bind p:${hyper}     focus ${notes}
+bind .:${hyper}     focus ${todo}
+bind m:${hyper}     focus ${logic}
+bind n:${hyper}     focus ${typora}
 
 layout 3mon ${browser}      ${mon2-full}
 layout 1mon ${editor}       ${mon-full}
@@ -79,5 +83,5 @@ bind backslash:${hyper} relaunch
 default 3mon count:3
 default 1mon count:1
 
-bind m:${hyper} layout 3mon
-bind n:${hyper} layout 1mon
+# bind m:${hyper} layout 3mon
+# bind n:${hyper} layout 1mon
